@@ -1,0 +1,36 @@
+version: "2"
+
+services:
+  # load balancer
+  lb:
+    image: nginx:1.9
+    volumes:
+      - ./lb/nginx.conf:/etc/nginx/nginx.conf:ro
+    networks:
+      - backend
+    ports:
+      - "8000:8000"
+
+  web:
+    build: web
+    links:
+      - redis
+    networks:
+      backend:
+        aliases:
+          # All app servers can be referred to by this alias on the backend network
+          - webapps
+    expose:
+      - 8000
+    depends_on:
+      - lb
+
+  redis :
+    image: redis
+    networks:
+      - backend
+    expose:
+      - 6379
+
+networks:
+  backend: {}

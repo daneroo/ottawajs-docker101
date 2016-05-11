@@ -88,6 +88,7 @@
                 <div class="intro-heading"><span class="hidden-xs">Come </span>Join Us!</div>
                 <a id="counter" NOThref="#services" class="NOTpage-scroll btn btn-xl">Count me in!</a>
             </div>
+            <div id="host">...</div>
         </div>
     </header>
 
@@ -1013,6 +1014,7 @@
             .done(function(result) {
                 console.log("JSON Data: ", result.counter);
                 $( "#counter" ).text( "Counting: "+result.counter );
+                $( "#host" ).text( "Host: "+result.host );
             })
             .fail(function(jqxhr, textStatus, error) {
                 var err = textStatus + ", " + error;
