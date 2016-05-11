@@ -38,4 +38,8 @@ docker run --rm -it -p 8000:8000 web
 open http://0.0.0.0:8000
 open http://$(docker-machine ip dev):8000
 
+# docker-compose
+docker-compose build
+docker-compose up
+
 ```
