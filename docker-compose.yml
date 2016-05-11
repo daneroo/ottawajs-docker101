@@ -1,0 +1,14 @@
+
+# this is the puls, the monitor and the static app.
+web:
+  build: web
+  links:
+    - redis
+  ports:
+    - 8000:8000
+
+redis :
+  image: redis
+  ports:
+    - 6379:6379
+

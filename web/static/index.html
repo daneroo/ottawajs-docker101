@@ -86,7 +86,7 @@
                 <img class="logo" alt="Ottawa JavaScript" src="logo/OttawaJS.png">
                 <div class="intro-lead-in">Your Ottawa JavaScript Hub</div>
                 <div class="intro-heading"><span class="hidden-xs">Come </span>Join Us!</div>
-                <a href="#services" class="page-scroll btn btn-xl">Tell Me More</a>
+                <a id="counter" NOThref="#services" class="NOTpage-scroll btn btn-xl">Count me in!</a>
             </div>
         </div>
     </header>
@@ -1006,6 +1006,20 @@
 
     <!-- Custom Theme JavaScript -->
     <script src="js/agency.js"></script>
+    <script>
+ 
+      $( "#counter" ).click(function() {
+        $.getJSON("/counter")
+            .done(function(result) {
+                console.log("JSON Data: ", result.counter);
+                $( "#counter" ).text( "Counting: "+result.counter );
+            })
+            .fail(function(jqxhr, textStatus, error) {
+                var err = textStatus + ", " + error;
+                console.log("Request Failed: " + err);
+            });
+      });
+    </script>
 
 </body>
 

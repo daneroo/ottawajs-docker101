@@ -16,6 +16,7 @@ Presented on 2015-05-11
 docker pull ubuntu
 docker pull ubuntu:14.04
 docker pull ubuntu:16.04
+docker pull nginx
 docker pull redis
 docker pull node:4
 docker pull node:6
@@ -25,6 +26,9 @@ docker run --rm -it ubuntu
 docker run --rm -it ubuntu:14.04
 docker run --rm -it ubuntu:16.04
 docker run --rm -it centos
+
+docker run --rm -it -p 8756:80 nginx
+open http://0.0.0.0:8756
 
 # docker build
 cd web
