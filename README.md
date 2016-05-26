@@ -18,6 +18,7 @@ docker pull ubuntu
 docker pull ubuntu:14.04
 docker pull ubuntu:16.04
 docker pull nginx
+docker pull nginx:1.9
 docker pull redis
 docker pull node:4
 docker pull node:6
